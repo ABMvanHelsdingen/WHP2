@@ -4,22 +4,20 @@ Chapter 2 of thesis, with GOF tests in Chapter 4
 
 ## Cues
 
-Contains files relating to the fitting of the whale cue data and the results. 
+Contains files relating to the fitting of the whale cue data.  
 
-Note that the cue data itself is not public.
-
-
+Included are the results, both frequentist and Bayesian, for the whale introduced in Section 2.4. However the cue data itself is not public.
 
 
 Bayesian.R: code to run Markov Chain Monte Carlo (MCMC) chain in the R package NIMBLE. Fits cue data to first model.<br />
 
-Bayesian-Mixture.R: as above but for second, mixture model.<br />
+Bayesian-Mixture.R: as above but for the second, mixture model.<br />
 
-Frequentist.R: code to fit cue data to first model by MLE in the R package TMB.<br />
+Frequentist.R and Frequentist-Mixture: code to fit cue data by MLE with the R package TMB.<br />
 
-whales\_cues.cpp: TMB C++ template for fitting the first model, with baseline given by Equation 13, to the whale cue data by MLE.<br />
+whales\_cues.cpp and whales\_cues\_mix.cpp: TMB C++ templates that calculate the likelihood of each model, with baseline given by Equation 2.9.<br />
 
- 
+
 
 ## Figures
 
@@ -43,15 +41,14 @@ MWIHP-K2byK2.jpeg: Histograms of the bias in K2 grouped by the true value of k\_
 
  
 
-Contains the raw results of the two simulation studies.
+Contains the raw results of the two simulation studies, being the matrix output from WIHPsimulations.R and MWIHPsimulations.R
 
  
 
 WIHPsims\_i\_.csv (where i = 1:64) contain simulation results for the first simulation study.<br />
 
-MWIHPsims\_i\_.csv (where i = 1:192) contain simulation results for the second simulation study, being the output of MWIHPsimulations.R<br /> 
+MWIHPsims\_i\_.csv (where i = 1:192) contain simulation results for the second simulation study.<br /> 
 
-They contain the  matrix output from WIHPsimulations.R and MWIHPsimulations.R<br />
 
  
 
@@ -63,21 +60,13 @@ Contains files for running the two simulation studies.
 
  
 
-WHPsimulations.R: simulates the first model when the baseline rate mu(t) is constant (not used in manuscript).<br />
-
-WIHPsimulations.R: simulates the first model when the baseline rate is inhomogeneous.<br />
+WIHPsimulations.R: simulates the first model with a single Weibull.<br />
 
 MWIHPsimulations.R: simulates the mixture model.<br />
 
- 
+Simulate.R: contains functions called by the three above R scripts that implement the algorithms described in Appendix A.3. 
 
-Simulate.R: contains functions called by the three above R scripts that implement the algorithms described in Appendix C. 
-
- 
-
-weibull\_hawkes.cpp: TMB template for fitting the first model (with constant baseline) by MLE.<br />
-
-weibull\_hawkes\_inhomog.cpp: TMB template for fitting the first model with a baseline function used in the simulation studies.<br /> 
+weibull\_hawkes\_inhomog.cpp: TMB template for the single Weibull model with the baseline function used in the simulation studies.<br /> 
 
 mix\_weibull\_hawkes\_inhomog.cpp: As above, but for the mixture model.<br />
 
