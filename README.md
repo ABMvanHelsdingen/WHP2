@@ -1,6 +1,6 @@
 # Weibull-Hawkes Model
 
-Chapter 2 of thesis, with GOF tests in Chapter 4
+Chapter 2 of thesis formulates the model and its two versions (single and mixture Weibull) and presents simulation study and case study results. Chapter 4 explores Goodness of Fit tests. 
 
 ## Cues
 
@@ -27,11 +27,11 @@ Contains plots of the simulation study results
 
  
 
-WIHP-<param>byK.jpeg: Histograms of the bias in <param> grouped by the true value of k for the first simulation study.<br />
+WIHP-\<param\>byK.jpeg: Histograms of the bias in \<param\> grouped by the true value of k for the first simulation study.<br />
 
-MWIHP-<param>byK1.jpeg: Histograms of the bias in <param> grouped by the true value of k\_1 for the second simulation study.<br />
+MWIHP-\<param\>byK1.jpeg: Histograms of the bias in \<param\> grouped by the true value of k<sub>1</sub> for the second simulation study.<br />
 
-MWIHP-K2byK2.jpeg: Histograms of the bias in K2 grouped by the true value of k\_2 for the second simulation study.<br />
+MWIHP-K2byK2.jpeg: Histograms of the bias in k<sub>2</sub> grouped by the true value of k<sub>2</sub> for the second simulation study.<br />
 
  
 
@@ -66,7 +66,4 @@ MWIHPsimulations.R: simulates the mixture model.<br />
 
 Simulate.R: contains functions called by the three above R scripts that implement the algorithms described in Appendix A.3. 
 
-weibull\_hawkes\_inhomog.cpp: TMB template for the single Weibull model with the baseline function used in the simulation studies.<br /> 
-
-mix\_weibull\_hawkes\_inhomog.cpp: As above, but for the mixture model.<br />
-
+weibull\_hawkes\_inhomog.cpp and mix\_weibull\_hawkes\_inhomog.cpp: TMB templates with the baseline function used in the simulation studies.<br /> 
